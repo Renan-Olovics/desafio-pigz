@@ -35,8 +35,8 @@ const ITEMS: CardProps[] = [
 
 const Card = ({ title, description, image }: CardProps) => (
   <div className="w-[380px] self-center relative">
-    <h1 className="text-center text-[#333333] text-2xl leading-[80px] font-semibold">{title}</h1>
-    <div className="w-full h-[400px] bg-[linear-gradient(224deg,#FA641E,#FF881F)] rounded-[60px]">
+    <h1 className="text-center text-gray-800 text-2xl leading-[80px] font-semibold">{title}</h1>
+    <div className="w-full h-[400px] bg-[linear-gradient(224deg,var(--color-primary),var(--color-secondary))] rounded-[60px]">
       <p className="text-white font-light text-[15px] leading-[21px] text-center max-w-[300px] mx-auto pt-10">
         {description}
       </p>

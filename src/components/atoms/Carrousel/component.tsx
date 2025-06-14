@@ -9,8 +9,8 @@ const styles = tv({
   base: 'h-[4px] rounded-full cursor-pointer',
   variants: {
     active: {
-      true: 'bg-[#FF6B00]',
-      false: 'bg-[#E0E0E0]',
+      true: 'bg-[var(--color-carousel-active)]',
+      false: 'bg-gray-200',
     },
   },
 })

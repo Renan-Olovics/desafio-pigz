@@ -10,7 +10,7 @@ type Props = {
 
 const SellCard = ({ title, subtitle, features, price, buttonText }: Props) => {
   return (
-    <div className="bg-[#FAFAFA] p-10 rounded-4xl mx-4">
+    <div className="bg-gray-50 p-10 rounded-4xl mx-4">
       <h1 className="text-2xl font-bold text-black">{title}</h1>
 
       <p className="text-base font-medium text-gray-700 mb-6 mt-1">{subtitle}</p>

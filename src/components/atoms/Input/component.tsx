@@ -49,7 +49,7 @@ export const Input = ({
       {label && <label className="text-xs leading-[18px] text-gray-800">{label}</label>}
       {flag && (
         <div
-          className={`absolute bg-[#F0F0F0] h-12 w-[100px] flex items-center justify-center p-3 rounded-l-lg ${
+          className={`absolute bg-gray-100 h-12 w-[100px] flex items-center justify-center p-3 rounded-l-lg ${
             label ? 'top-[22px]' : 'top-0'
           }`}
         >
