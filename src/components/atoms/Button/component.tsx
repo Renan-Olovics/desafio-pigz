@@ -14,7 +14,7 @@ const button = tv({
   variants: {
     variant: {
       primary:
-        'text-white bg-[linear-gradient(258deg,var(--color-primary),var(--color-secondary))] shadow-[0_8px_48px_var(--color-primary)]',
+        'text-white bg-[linear-gradient(258deg,var(--color-primary),var(--color-secondary))] shadow-[0_6px_10px_0_color-mix(in_srgb,var(--color-primary)_40%,transparent)]',
       secondary: 'bg-primary text-white text-base leading-[25px] font-medium',
     },
   },
