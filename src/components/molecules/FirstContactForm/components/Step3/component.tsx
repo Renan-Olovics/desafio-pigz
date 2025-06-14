@@ -1,0 +1,65 @@
+import { FormProvider, useForm } from 'react-hook-form'
+import { Button, FormInput, FormSelect } from '@/components/atoms'
+import { useFormStore } from '@/store/useFormStore'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
+
+const schema = z.object({
+  shopName: z.string({ required_error: 'Nome da loja é obrigatório' }),
+  shopCnpj: z
+    .string({ required_error: 'CNPJ da loja é obrigatório' })
+    .min(14, 'CNPJ inválido')
+    .transform((val) => val.replace(/[^0-9]/g, '')),
+  shopType: z.string({ required_error: 'Tipo de loja é obrigatório' }),
+})
+
+export type Step3FormData = z.infer<typeof schema>
+
+export const Step3 = () => {
+  const { formData, setFormData } = useFormStore()
+
+  const form = useForm<Step3FormData>({
+    resolver: zodResolver(schema),
+    defaultValues: {
+      shopName: formData.shopName,
+      shopCnpj: formData.shopCnpj,
+      shopType: formData.shopType,
+    },
+  })
+
+  const onSubmit = (data: Step3FormData) => {
+    const updatedValues = setFormData(data)
+    console.log(updatedValues)
+  }
+
+  return (
+    <FormProvider {...form}>
+      <form className="flex flex-col gap-4" onSubmit={form.handleSubmit(onSubmit)}>
+        <h1 className="text-[28px] font-semibold">Me conta um pouco sobre a sua loja</h1>
+        <FormInput
+          name="shopName"
+          label="Nome da loja"
+          placeholder="Restaurante Todo Mundo Gosta"
+        />
+        <FormInput
+          name="shopCnpj"
+          label="CNPJ da loja"
+          placeholder="00.000.000/0000-00"
+          format="##.###.###/####-##"
+        />
+        <FormSelect
+          name="shopType"
+          label="Tipo de loja"
+          options={[
+            { label: 'Restaurante', value: 'restaurant' },
+            { label: 'Padaria', value: 'bakery' },
+            { label: 'Outro', value: 'other' },
+          ]}
+        />
+        <Button variant="secondary" type="submit">
+          Concluir
+        </Button>
+      </form>
+    </FormProvider>
+  )
+}

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { Step1, Step2 } from './components'
+import { Step1, Step2, Step3 } from './components'
 
 export const FirstContactForm = () => {
   const [currentStep, setCurrentStep] = useState(1)
@@ -8,6 +8,7 @@ export const FirstContactForm = () => {
   const steps = {
     1: <Step1 next={() => setCurrentStep(2)} />,
     2: <Step2 next={() => setCurrentStep(3)} />,
+    3: <Step3 />,
   }
 
   return (

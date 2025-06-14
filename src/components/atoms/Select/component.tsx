@@ -51,6 +51,9 @@ export const Select = ({ options, label, error, className, disabled, ...rest }: 
           disabled={disabled}
           {...rest}
         >
+          <option value={undefined} className="bg-transparent text-black">
+            Selecione
+          </option>
           {options.map(({ label, value }) => (
             <option key={value} value={value} className="bg-transparent text-black">
               {label}
