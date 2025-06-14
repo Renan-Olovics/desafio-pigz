@@ -10,16 +10,20 @@ type LinkProps = {
 } & ComponentProps<'a'>
 
 const button = tv({
-  base: 'rounded-2xl py-1.5 px-6 font-medium h-12 flex items-center justify-center',
+  base: 'rounded-2xl py-1.5 px-6 font-medium h-12 flex items-center justify-center cursor-pointer',
   variants: {
     variant: {
       primary:
         'text-white bg-[linear-gradient(258deg,var(--color-primary),var(--color-secondary))] shadow-[0_6px_10px_0_color-mix(in_srgb,var(--color-primary)_40%,transparent)]',
       secondary: 'bg-primary text-white text-base leading-[25px] font-medium',
     },
+    disabled: {
+      true: 'opacity-50 cursor-not-allowed pointer-events-none',
+    },
   },
   defaultVariants: {
     variant: 'primary',
+    disabled: false,
   },
 })
 
@@ -27,10 +31,11 @@ export const Button = ({
   children,
   className,
   variant,
+  disabled,
   ...rest
 }: PropsWithChildren<ButtonProps>) => {
   return (
-    <button className={button({ className, variant })} {...rest}>
+    <button className={button({ className, variant, disabled })} disabled={disabled} {...rest}>
       {children}
     </button>
   )
