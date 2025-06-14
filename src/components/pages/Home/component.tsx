@@ -33,9 +33,14 @@ export const Home = () => {
       <p className="mt-[57px] mx-auto flex w-fit font-medium text-base text-gray-800 mb-14">
         Fale com a Pigz
         <Icon size={18} name="whatsapp" className="ml-[19px] mr-[7px]" />
-        <span className="font-medium text-base text-gray-800">
+        <a
+          href="https://wa.me/+559531983939"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium text-base text-gray-800"
+        >
           <span className="text-[13px]">95</span> 3224-2603
-        </span>
+        </a>
       </p>
       <Footer />
     </>

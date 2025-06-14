@@ -1,4 +1,4 @@
-import { Button } from '@/components/atoms'
+import { Link } from '@/components/atoms'
 
 type Props = {
   title: string
@@ -28,9 +28,15 @@ const SellCard = ({ title, subtitle, features, price, buttonText }: Props) => {
         {price}
       </p>
 
-      <Button variant="primary" className="w-full mx-auto h-14">
+      <Link
+        href="https://pigz.com.br/"
+        target="_blank"
+        rel="noopener noreferrer"
+        variant="primary"
+        className="w-full mx-auto h-14"
+      >
         {buttonText}
-      </Button>
+      </Link>
     </div>
   )
 }
