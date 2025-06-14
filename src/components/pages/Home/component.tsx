@@ -1,5 +1,5 @@
 import { Banner, PigzBenefits, PigzCarrousel } from '@/components/organisms'
-import { Header, SellCards } from '@/components/molecules'
+import { Footer, Header, SellCards } from '@/components/molecules'
 import { Icon } from '@/components/atoms'
 
 export const Home = () => {
@@ -37,6 +37,7 @@ export const Home = () => {
           <span className="text-[13px]">95</span> 3224-2603
         </span>
       </p>
+      <Footer />
     </>
   )
 }
