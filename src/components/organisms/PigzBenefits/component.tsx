@@ -38,17 +38,6 @@ export const PigzBenefits = () => {
           className="mx-auto"
         />
       ))}
-      <h2 className="mt-20 text-gray-800 text-3xl text-center leading-10 font-bold mx-auto max-w-[334px]">
-        Tudo que você
-        <wbr /> precisa por apenas
-        <wbr /> R$199/mês
-      </h2>
-      <p className="text-gray-800 text-base text-center leading-6 font-normal max-w-72 mx-auto">
-        Tenha todas as funcionalidades
-        <wbr /> Pigz sem taxa de adesão, sem
-        <wbr /> comissão por cada venda, sem
-        <wbr /> letrinhas miúdas.
-      </p>
     </div>
   )
 }
