@@ -30,7 +30,7 @@ export const Home = () => {
         e seus clientes.
       </p>
       <SellCards />
-      <p className="mx-auto flex w-fit font-medium text-base text-gray-800 mb-14">
+      <p className="mt-[57px] mx-auto flex w-fit font-medium text-base text-gray-800 mb-14">
         Fale com a Pigz
         <Icon size={18} name="whatsapp" className="ml-[19px] mr-[7px]" />
         <span className="font-medium text-base text-gray-800">
