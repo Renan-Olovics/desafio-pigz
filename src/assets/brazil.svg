@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 135.467 135.467"
+  version="1.1" id="svg8">
+  <defs id="defs2">
+    <clipPath id="clip-1">
+      <circle r="735"
+        transform="matrix(0.032475922257, 0, 0, 0.032524481416, 67.733390808105, 67.662048339844)" />
+    </clipPath>
+  </defs>
+  <g>
+    <g transform="matrix(0.978831529617, 0, 0, 0.978831529617, -28.287313461304, -37.281913757324)"
+      id="g4684">
+      <circle
+        style="fill-opacity: 1; stroke: none; stroke-width: 336.559; stroke-miterlimit: 4; stroke-dasharray: none; stroke-opacity: 1; fill: #6DA544;"
+        id="path4679" cx="98.097542" cy="107.28635" r="69.198166" />
+    </g>
+    <path d="M 11.128 67.733 L 67.733 103.879 L 124.339 67.733 L 67.733 31.587 Z"
+      style="fill: #FFDA44;" />
+    <circle r="23.87" cx="67.733" cy="67.733" style="fill: #0052B4;" />
+    <path
+      d="M -3.876 115.473 C -3.876 70.848 44.432 42.957 83.078 65.27 C 101.014 75.625 112.063 94.762 112.063 115.473 L 108.653 115.473 C 108.653 73.473 63.187 47.222 26.814 68.223 C 9.933 77.969 -0.466 95.98 -0.466 115.473 Z"
+      clip-path="url(#clip-1)" fill="#fff" style="stroke: #fff; stroke-width: 2;" />
+  </g>
+</svg>

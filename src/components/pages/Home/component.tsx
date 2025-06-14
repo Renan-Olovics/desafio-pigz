@@ -1,9 +1,11 @@
-import { Icon } from '@/components/atoms'
+import { Header } from '@/components/molecules'
+import { Banner } from '@/components/organisms'
 
 export const Home = () => {
   return (
-    <div>
-      <Icon name="burguer" width={100} height={100} />
-    </div>
+    <>
+      <Header />
+      <Banner />
+    </>
   )
 }

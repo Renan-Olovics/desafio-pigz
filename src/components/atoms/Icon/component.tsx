@@ -6,10 +6,9 @@ type Props = ImgHTMLAttributes<HTMLImageElement> & {
   size?: number
   width?: number
   height?: number
-  className?: string
 }
 
-export const Icon = ({ name, size = 24, width, height, className = '', ...rest }: Props) => {
+export const Icon = ({ name, size = 24, width, height, ...rest }: Props) => {
   const iconPath = Icons[name]
 
   if (!iconPath) {
@@ -17,14 +16,5 @@ export const Icon = ({ name, size = 24, width, height, className = '', ...rest }
     return null
   }
 
-  return (
-    <img
-      src={iconPath}
-      alt={name}
-      width={width ?? size}
-      height={height ?? size}
-      className={className}
-      {...rest}
-    />
-  )
+  return <img src={iconPath} alt={name} width={width ?? size} height={height ?? size} {...rest} />
 }
