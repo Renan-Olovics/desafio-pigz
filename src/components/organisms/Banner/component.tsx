@@ -3,7 +3,7 @@ import { FirstContactForm } from '@/components/molecules'
 
 export const Banner = () => {
   return (
-    <div className="bg-[linear-gradient(158deg,var(--color-primary),var(--color-secondary))] relative">
+    <div className="bg-[linear-gradient(158deg,var(--color-primary),var(--color-secondary))] relative overflow-hidden">
       <h1 className="font-bold text-white text-[40px] max-w-[340px] leading-12 pt-8 pl-4">
         Pigz: tudo que
         <wbr /> você precisa
