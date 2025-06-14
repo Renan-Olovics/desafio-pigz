@@ -1,5 +1,6 @@
 import { Banner, PigzBenefits, PigzCarrousel } from '@/components/organisms'
 import { Header, SellCards } from '@/components/molecules'
+import { Icon } from '@/components/atoms'
 
 export const Home = () => {
   return (
@@ -29,6 +30,13 @@ export const Home = () => {
         e seus clientes.
       </p>
       <SellCards />
+      <p className="mx-auto flex w-fit font-medium text-base text-gray-800 mb-14">
+        Fale com a Pigz
+        <Icon size={18} name="whatsapp" className="ml-[19px] mr-[7px]" />
+        <span className="font-medium text-base text-gray-800">
+          <span className="text-[13px]">95</span> 3224-2603
+        </span>
+      </p>
     </>
   )
 }
