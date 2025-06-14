@@ -1,5 +1,5 @@
-import { Header } from '@/components/molecules'
 import { Banner, PigzBenefits, PigzCarrousel } from '@/components/organisms'
+import { Header, SellCards } from '@/components/molecules'
 
 export const Home = () => {
   return (
@@ -28,6 +28,7 @@ export const Home = () => {
         Respostas automáticas e robôs? Aqui não. Nossa equipe está sempre disponível pra ajudar você
         e seus clientes.
       </p>
+      <SellCards />
     </>
   )
 }

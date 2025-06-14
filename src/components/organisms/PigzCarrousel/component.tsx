@@ -46,9 +46,11 @@ const Card = ({ title, description, image }: CardProps) => (
 )
 
 export const PigzCarrousel = () => (
-  <Carrousel
-    items={ITEMS.map((props) => (
-      <Card {...props} />
-    ))}
-  />
+  <div className="w-[380px] mx-auto">
+    <Carrousel
+      items={ITEMS.map((props) => (
+        <Card {...props} />
+      ))}
+    />
+  </div>
 )
