@@ -26,18 +26,20 @@ const BENEFITS: { iconName: IconName; title: string; description: string }[] = [
 
 export const PigzBenefits = () => {
   return (
-    <div className="relative -top-[65px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="relative -top-[65px]">
       <Icon name="grupo3535" width={205} height={140} className="mx-auto" />
 
-      {BENEFITS.map(({ description, iconName, title }) => (
-        <BenefitCard
-          key={title}
-          iconName={iconName}
-          title={title}
-          description={description}
-          className="mx-auto"
-        />
-      ))}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-4">
+        {BENEFITS.map(({ description, iconName, title }) => (
+          <BenefitCard
+            key={title}
+            iconName={iconName}
+            title={title}
+            description={description}
+            className="mx-auto"
+          />
+        ))}
+      </div>
     </div>
   )
 }
