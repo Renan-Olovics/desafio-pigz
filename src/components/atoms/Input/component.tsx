@@ -4,7 +4,7 @@ import { tv } from 'tailwind-variants'
 import { Icon } from '@/components/atoms'
 import { PatternFormat, PatternFormatProps } from 'react-number-format'
 
-const input = tv({
+const styles = tv({
   base: 'px-3 py-2 border rounded-md focus:outline-none focus:ring-2 placeholder:text-gray-300 placeholder:text-sm h-12 z-20',
   variants: {
     error: {
@@ -21,34 +21,33 @@ const input = tv({
   },
 })
 
-type BaseProps = {
+type Props = InputHTMLAttributes<HTMLInputElement> & {
   label?: string
   error?: string
   className?: string
   value?: string
+  format?: string
+  flag?: boolean
 }
-
-type PhoneInputProps = BaseProps &
-  Omit<PatternFormatProps, 'format' | 'mask' | 'value'> & {
-    type: 'phone'
-  }
-
-type RegularInputProps = BaseProps &
-  Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'value'> & {
-    type?: Exclude<InputHTMLAttributes<HTMLInputElement>['type'], 'phone'>
-  }
-
-type Props = PhoneInputProps | RegularInputProps
 
 type FormProps<T extends FieldValues> = Omit<Props, 'name'> & {
   name: Path<T>
 }
 
-export const Input = ({ label, error, className, value = '', type = 'text', ...props }: Props) => {
+export const Input = ({
+  label,
+  error,
+  className,
+  value = '',
+  format,
+  type = 'text',
+  flag = false,
+  ...props
+}: Props) => {
   return (
     <div className="flex flex-col gap-1 relative">
       {label && <label className="text-xs leading-[18px] text-gray-800">{label}</label>}
-      {type === 'phone' && (
+      {flag && (
         <div
           className={`absolute bg-[#F0F0F0] h-12 w-[100px] flex items-center justify-center p-3 rounded-l-lg ${
             label ? 'top-[22px]' : 'top-0'
@@ -59,17 +58,17 @@ export const Input = ({ label, error, className, value = '', type = 'text', ...p
           <Icon name="arrow" size={50} />
         </div>
       )}
-      {type === 'phone' ? (
+      {format ? (
         <PatternFormat
-          className={input({ error: !!error, isPhone: true, className })}
+          className={styles({ error: !!error, isPhone: flag, className })}
           mask="_"
           value={value}
           {...(props as PatternFormatProps)}
-          format="(##) #####-####"
+          format={format}
         />
       ) : (
         <input
-          className={input({ error: !!error, className })}
+          className={styles({ error: !!error, className })}
           value={value}
           type={type}
           {...(props as InputHTMLAttributes<HTMLInputElement>)}
