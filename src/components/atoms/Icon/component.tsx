@@ -1,8 +1,10 @@
 import * as Icons from '@/assets'
 import { ImgHTMLAttributes } from 'react'
 
+export type IconName = keyof typeof Icons
+
 type Props = ImgHTMLAttributes<HTMLImageElement> & {
-  name: keyof typeof Icons
+  name: IconName
   size?: number
   width?: number
   height?: number

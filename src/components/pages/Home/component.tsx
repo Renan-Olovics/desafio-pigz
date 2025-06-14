@@ -1,11 +1,12 @@
 import { Header } from '@/components/molecules'
-import { Banner } from '@/components/organisms'
+import { Banner, PigzBenefits } from '@/components/organisms'
 
 export const Home = () => {
   return (
     <>
       <Header />
       <Banner />
+      <PigzBenefits />
     </>
   )
 }
