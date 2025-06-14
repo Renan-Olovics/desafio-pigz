@@ -1,8 +1,9 @@
 import { FormProvider, useForm } from 'react-hook-form'
-import { Button, FormInput, FormSelect } from '@/components/atoms'
-import { useFormStore } from '@/store/useFormStore'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
+
+import { Button, FormInput, FormSelect } from '@/components/atoms'
+import { useFormStore } from '@/store'
 
 const schema = z.object({
   shopName: z.string({ required_error: 'Nome da loja é obrigatório' }),

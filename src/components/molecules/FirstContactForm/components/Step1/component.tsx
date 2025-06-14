@@ -3,7 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
 import { Button, FormInput } from '@/components/atoms'
-import { useFormStore } from '@/store/useFormStore'
+import { useFormStore } from '@/store'
 
 const schema = z.object({
   name: z
