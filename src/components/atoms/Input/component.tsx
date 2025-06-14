@@ -5,7 +5,7 @@ import { Icon } from '@/components/atoms'
 import { PatternFormat, PatternFormatProps } from 'react-number-format'
 
 const styles = tv({
-  base: 'px-3 py-2 border rounded-md focus:outline-none focus:ring-2 placeholder:text-gray-300 placeholder:text-sm h-12 z-20',
+  base: 'px-3 py-2 border rounded-md focus:outline-none focus:ring-2 placeholder:text-gray-300 placeholder:text-sm h-12 z-20 focus:border-primary',
   variants: {
     error: {
       true: 'border-red-500',
@@ -45,7 +45,7 @@ export const Input = ({
   ...props
 }: Props) => {
   return (
-    <div className="flex flex-col gap-1 relative">
+    <div className={`flex flex-col gap-1 relative ${className}`}>
       {label && <label className="text-xs leading-[18px] text-gray-800">{label}</label>}
       {flag && (
         <div

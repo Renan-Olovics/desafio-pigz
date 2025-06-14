@@ -10,7 +10,7 @@ type LinkProps = {
 } & ComponentProps<'a'>
 
 const button = tv({
-  base: 'rounded-full py-1.5 px-6 font-medium',
+  base: 'rounded-2xl py-1.5 px-6 font-medium h-12 flex items-center justify-center',
   variants: {
     variant: {
       primary:

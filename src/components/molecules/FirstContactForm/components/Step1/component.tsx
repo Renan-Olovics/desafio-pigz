@@ -18,7 +18,7 @@ const schema = z.object({
     }),
 })
 
-type ContactFormData = z.infer<typeof schema>
+export type Step1FormData = z.infer<typeof schema>
 
 type Props = {
   next: () => void
@@ -27,12 +27,12 @@ type Props = {
 export const Step1 = ({ next }: Props) => {
   const { formData, setFormData } = useFormStore()
 
-  const form = useForm<ContactFormData>({
+  const form = useForm<Step1FormData>({
     resolver: zodResolver(schema),
     defaultValues: formData,
   })
 
-  const onSubmit = (data: ContactFormData) => {
+  const onSubmit = (data: Step1FormData) => {
     setFormData(data)
     next()
   }
