@@ -62,38 +62,77 @@ export const Step2 = ({ next }: Props) => {
 
   return (
     <FormProvider {...form}>
-      <form className="flex flex-col gap-4" onSubmit={form.handleSubmit(onSubmit)}>
+      <form
+        className="flex flex-col gap-4"
+        onSubmit={form.handleSubmit(onSubmit)}
+        aria-label="Formulário de endereço"
+        noValidate
+      >
         <h1 className="text-[28px] font-semibold">Onde fica a sua loja?</h1>
-        <FormInput name="postalCode" label="CEP" placeholder="00000-00" format="#####-###" />
-        <section className="flex gap-4 w-full">
-          <FormSelect
-            className="w-28"
-            name="state"
-            label="Estado"
-            options={STATES.map(({ abbreviation }) => ({
-              label: abbreviation,
-              value: abbreviation,
-            }))}
-          />
-          <FormSelect
-            className="flex-1 min-w-0"
-            name="city"
-            label="Cidade"
-            disabled={!selectedState}
-            options={cities.map((city) => ({ label: city.nome, value: city.nome }))}
-          />
-        </section>
-        <FormInput name="street" label="Endereço" placeholder="Rua, Avenida, etc" />
-        <section className="flex gap-4 w-full">
-          <FormInput className="w-28" name="number" label="Número" placeholder="123" />
+
+        <section className="flex flex-col gap-4" aria-label="Localização">
           <FormInput
-            className="max-w-[208px] min-w-0"
-            name="complement"
-            label="Complemento"
-            placeholder="Apto 123, Bloco B, etc"
+            name="postalCode"
+            label="CEP"
+            placeholder="00000-00"
+            format="#####-###"
+            required
+            aria-label="CEP da sua loja"
           />
+
+          <div className="flex gap-4 w-full" role="group" aria-label="Estado e cidade">
+            <FormSelect
+              className="w-28"
+              name="state"
+              label="Estado"
+              options={STATES.map(({ abbreviation }) => ({
+                label: abbreviation,
+                value: abbreviation,
+              }))}
+              required
+              aria-label="Estado da sua loja"
+            />
+            <FormSelect
+              className="flex-1 min-w-0"
+              name="city"
+              label="Cidade"
+              disabled={!selectedState}
+              options={cities.map((city) => ({ label: city.nome, value: city.nome }))}
+              required
+              aria-label="Cidade da sua loja"
+            />
+          </div>
         </section>
-        <Button variant="secondary" type="submit">
+
+        <section className="flex flex-col gap-4" aria-label="Endereço">
+          <FormInput
+            name="street"
+            label="Endereço"
+            placeholder="Rua, Avenida, etc"
+            required
+            aria-label="Rua ou avenida da sua loja"
+          />
+
+          <div className="flex gap-4 w-full" role="group" aria-label="Número e complemento">
+            <FormInput
+              className="w-28"
+              name="number"
+              label="Número"
+              placeholder="123"
+              required
+              aria-label="Número do endereço da sua loja"
+            />
+            <FormInput
+              className="max-w-[208px] min-w-0"
+              name="complement"
+              label="Complemento"
+              placeholder="Apto 123, Bloco B, etc"
+              aria-label="Complemento do endereço da sua loja (opcional)"
+            />
+          </div>
+        </section>
+
+        <Button variant="secondary" type="submit" aria-label="Continuar para próxima etapa">
           Próximo
         </Button>
       </form>

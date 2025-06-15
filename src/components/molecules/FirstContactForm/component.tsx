@@ -12,8 +12,14 @@ export const FirstContactForm = () => {
   }
 
   return (
-    <div className="flex mx-auto flex-col bg-white w-96 rounded-3xl pt-8 pb-6 px-6">
-      {steps[currentStep as keyof typeof steps] || steps[1]}
+    <div
+      className="flex mx-auto flex-col bg-white w-96 rounded-3xl pt-8 pb-6 px-6"
+      role="form"
+      aria-label="Formulário de primeiro contato"
+    >
+      <div role="tabpanel" aria-label={`Etapa ${currentStep} de 3`} aria-live="polite">
+        {steps[currentStep as keyof typeof steps] || steps[1]}
+      </div>
     </div>
   )
 }

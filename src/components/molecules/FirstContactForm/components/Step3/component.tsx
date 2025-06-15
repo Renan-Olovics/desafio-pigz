@@ -35,29 +35,44 @@ export const Step3 = () => {
 
   return (
     <FormProvider {...form}>
-      <form className="flex flex-col gap-4" onSubmit={form.handleSubmit(onSubmit)}>
+      <form
+        className="flex flex-col gap-4"
+        onSubmit={form.handleSubmit(onSubmit)}
+        aria-label="Formulário de informações da loja"
+        noValidate
+      >
         <h1 className="text-[28px] font-semibold">Me conta um pouco sobre a sua loja</h1>
-        <FormInput
-          name="shopName"
-          label="Nome da loja"
-          placeholder="Restaurante Todo Mundo Gosta"
-        />
-        <FormInput
-          name="shopCnpj"
-          label="CNPJ da loja"
-          placeholder="00.000.000/0000-00"
-          format="##.###.###/####-##"
-        />
-        <FormSelect
-          name="shopType"
-          label="Tipo de loja"
-          options={[
-            { label: 'Restaurante', value: 'restaurant' },
-            { label: 'Padaria', value: 'bakery' },
-            { label: 'Outro', value: 'other' },
-          ]}
-        />
-        <Button variant="secondary" type="submit">
+
+        <section className="flex flex-col gap-4" aria-label="Informações da loja">
+          <FormInput
+            name="shopName"
+            label="Nome da loja"
+            placeholder="Restaurante Todo Mundo Gosta"
+            required
+            aria-label="Nome da sua loja"
+          />
+          <FormInput
+            name="shopCnpj"
+            label="CNPJ da loja"
+            placeholder="00.000.000/0000-00"
+            format="##.###.###/####-##"
+            required
+            aria-label="CNPJ da sua loja"
+          />
+          <FormSelect
+            name="shopType"
+            label="Tipo de loja"
+            options={[
+              { label: 'Restaurante', value: 'restaurant' },
+              { label: 'Padaria', value: 'bakery' },
+              { label: 'Outro', value: 'other' },
+            ]}
+            required
+            aria-label="Tipo da sua loja"
+          />
+        </section>
+
+        <Button variant="secondary" type="submit" aria-label="Concluir cadastro">
           Concluir
         </Button>
       </form>

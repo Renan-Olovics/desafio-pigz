@@ -39,16 +39,31 @@ export const Step1 = ({ next }: Props) => {
 
   return (
     <FormProvider {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="flex flex-col"
+        aria-label="Formulário de cadastro"
+        noValidate
+      >
         <h1 className="text-[28px] font-semibold">Quero vender no Pigz</h1>
         <span className="text-[13px] pt-2 pb-6">Dê o primeiro passo para aumentar suas vendas</span>
-        <section className="flex flex-col gap-5">
-          <FormInput name="name" label="Nome" type="text" placeholder="Leonercio Goesfeeld" />
+
+        <section className="flex flex-col gap-5" aria-label="Informações pessoais">
+          <FormInput
+            name="name"
+            label="Nome"
+            type="text"
+            placeholder="Leonercio Goesfeeld"
+            required
+            aria-label="Seu nome completo"
+          />
           <FormInput
             name="email"
             label="E-mail"
             type="email"
             placeholder="leonercio.goesfeeld@email.com"
+            required
+            aria-label="Seu endereço de e-mail"
           />
           <FormInput
             flag
@@ -57,12 +72,20 @@ export const Step1 = ({ next }: Props) => {
             type="phone"
             format="(##) #####-####"
             placeholder="(95) 99876-5432"
+            required
+            aria-label="Seu número de telefone"
           />
         </section>
-        <span className="text-gray-600 text-[13px] leading-[21px] mb-10 mt-5">
+
+        <div
+          className="text-gray-600 text-[13px] leading-[21px] mb-10 mt-5"
+          role="note"
+          aria-label="Termos de uso"
+        >
           Ao continuar, aceito que a Pigz entre em contato comigo por telefone, e-mail ou WhatsApp.
-        </span>
-        <Button variant="secondary" type="submit">
+        </div>
+
+        <Button variant="secondary" type="submit" aria-label="Continuar para próxima etapa">
           Continuar
         </Button>
       </form>
