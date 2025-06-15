@@ -1,6 +1,8 @@
-import { Icon, type IconName } from '@/components/atoms'
 import type { ComponentProps } from 'react'
+
 import { tv } from 'tailwind-variants'
+
+import { Icon, type IconName } from '@/components/atoms'
 
 const benefitCard = tv({
   base: 'bg-gray-50 rounded-[20px] w-[270px] max-w-[270px] h-[243px] flex flex-col items-center text-center py-10 border-2 border-transparent hover:border-gray-300',
