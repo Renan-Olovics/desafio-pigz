@@ -5,10 +5,10 @@ import { Icon } from '@/components/atoms'
 import { PatternFormat, PatternFormatProps } from 'react-number-format'
 
 const styles = tv({
-  base: 'px-3 py-2 border rounded-md focus:outline-none focus:ring-2 placeholder:text-gray-300 placeholder:text-sm h-12 z-20 focus:border-primary',
+  base: 'px-3 py-2 border rounded-md focus:outline-none focus:ring-2 placeholder:text-gray-300 placeholder:text-sm h-12 z-20 focus:border-primary transition-all duration-200',
   variants: {
     error: {
-      true: 'border-red-500',
+      true: 'border-red-500 focus:ring-red-500 focus:border-red-500',
       false: 'border-gray-400',
     },
     isPhone: {
@@ -63,6 +63,7 @@ export const Input = ({
           className={styles({ error: !!error, isPhone: flag, className })}
           mask="_"
           value={value}
+          aria-invalid={!!error}
           {...(props as PatternFormatProps)}
           format={format}
         />
@@ -71,10 +72,15 @@ export const Input = ({
           className={styles({ error: !!error, className })}
           value={value}
           type={type}
+          aria-invalid={!!error}
           {...(props as InputHTMLAttributes<HTMLInputElement>)}
         />
       )}
-      {error && <span className="text-sm text-red-500">{error}</span>}
+      {error && (
+        <span className="text-sm text-red-500" role="alert">
+          {error}
+        </span>
+      )}
     </div>
   )
 }
