@@ -10,7 +10,17 @@ const __dirname = dirname(__filename)
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react({
+      // Habilita o React Compiler
+      jsxRuntime: 'automatic',
+      // Configurações do Babel para otimizações
+      babel: {
+        plugins: [['@babel/plugin-transform-react-jsx', { runtime: 'automatic' }]],
+      },
+    }),
+    tailwindcss(),
+  ],
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
