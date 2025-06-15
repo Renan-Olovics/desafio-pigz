@@ -6,6 +6,10 @@
     scroll-behavior: smooth;
   }
 
+  body {
+    overflow-x: hidden;
+  }
+
   a {
     cursor: pointer;
   }
@@ -34,6 +38,5 @@
 @theme {
   --color-primary: #fa641e;
   --color-secondary: #ff881f;
-  --color-tertiary: #ff671f;
   --color-carousel-active: #ff6b00;
 }
