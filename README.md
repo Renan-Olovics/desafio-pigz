@@ -199,7 +199,7 @@ Este projeto é um teste técnico e não possui licença específica.
 
 ## 👨‍💻 Autor
 
-Seu Nome - [renanolovicsl@gmail.com](mailto:renanolovicsl@gmail.com)
+Seu Nome - [renanolovics@gmail.com](mailto:renanolovics@gmail.com)
 
 ## 📚 Explicações do Projeto
 
