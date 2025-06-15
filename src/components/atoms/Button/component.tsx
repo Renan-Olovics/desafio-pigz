@@ -1,5 +1,6 @@
+import type { PropsWithChildren, ComponentProps } from 'react'
+
 import { tv } from 'tailwind-variants'
-import { PropsWithChildren, ComponentProps } from 'react'
 
 type ButtonProps = {
   variant?: keyof typeof button.variants.variant

@@ -1,5 +1,5 @@
 import * as Icons from '@/assets'
-import { ImgHTMLAttributes } from 'react'
+import type { ImgHTMLAttributes } from 'react'
 
 export type IconName = keyof typeof Icons
 

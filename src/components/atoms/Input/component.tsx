@@ -1,8 +1,11 @@
+import type { InputHTMLAttributes } from 'react'
+
 import { Controller, FieldValues, Path, useFormContext } from 'react-hook-form'
-import { InputHTMLAttributes } from 'react'
+import type { PatternFormatProps } from 'react-number-format'
+import { PatternFormat } from 'react-number-format'
 import { tv } from 'tailwind-variants'
+
 import { Icon } from '@/components/atoms'
-import { PatternFormat, PatternFormatProps } from 'react-number-format'
 
 const styles = tv({
   base: 'px-3 py-2 border rounded-md focus:outline-none focus:ring-2 placeholder:text-gray-300 placeholder:text-sm h-12 z-20 focus:border-primary transition-all duration-200',

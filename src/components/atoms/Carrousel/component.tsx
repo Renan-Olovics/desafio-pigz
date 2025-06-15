@@ -1,4 +1,5 @@
-import { type ReactNode, useState, useEffect } from 'react'
+import type { ReactNode } from 'react'
+import { useState, useEffect } from 'react'
 import { tv } from 'tailwind-variants'
 
 type Props = {
