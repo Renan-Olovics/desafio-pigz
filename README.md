@@ -292,43 +292,142 @@ Neste projeto, o desenvolvimento foi feito seguindo o conceito de "pixel perfect
 
 A busca pelo pixel perfect não deve comprometer a experiência do usuário em diferentes dispositivos. É crucial encontrar um equilíbrio entre fidelidade ao design e responsividade efetiva.
 
-### 🔧 Decisões Técnicas e Trade-offs
+### 🎯 Padrões de Projeto Utilizados
 
-Neste projeto de teste, algumas decisões técnicas foram tomadas considerando o escopo e tempo disponível. É importante documentar estas escolhas e suas alternativas para projetos reais:
+#### Atomic Design
 
-#### Componente de Ícones
+- **Atoms**: Componentes básicos e reutilizáveis
 
-**Implementação Atual:**
+  - Botões, inputs, ícones
+  - Componentes puros sem lógica de negócio
+  - Altamente reutilizáveis
 
-- Tag `<a>` simples com path do SVG/imagem
-- Solução rápida e direta
-- Limitações:
-  - Dificuldade em modificar cores via CSS
-  - Impossibilidade de usar classes como `stroke` e `fill`
-  - Reutilização limitada dos SVGs
+- **Molecules**: Combinações de atoms
 
-**Solução Ideal para Projetos Reais:**
+  - Formulários, cards
+  - Pequenos grupos de componentes
+  - Lógica simples
 
-1. **Para Imagens:**
+- **Organisms**: Componentes complexos
+  - Headers, banners
+  - Combinações de molecules
+  - Lógica de negócio específica
 
-   - Componente de imagem otimizado
-   - Lazy loading automático
-   - Suporte a formatos modernos (WebP)
-   - Carregamento responsivo
-   - Otimização de tamanhos
+#### Outros Padrões
 
-2. **Para Ícones:**
-   - Importação de SVGs como componentes React
-   - Transpilação via Webpack
-   - Manipulação via CSS:
-     ```css
-     .icon {
-       fill: currentColor;
-       stroke: currentColor;
-     }
+- **Provider Pattern**
+
+  - Centralização de configurações
+  - Injeção de dependências
+  - Exemplo: QueryProvider, AppProvider
+
+- **Container/Presentational**
+
+  - Separação de lógica e apresentação
+  - Componentes puros para UI
+  - Containers para lógica de negócio
+
+- **Custom Hooks**
+  - Encapsulamento de lógica reutilizável
+  - Exemplo: useSearchCity, useSearchAddress
+  - Separação de responsabilidades
+
+### 🛠️ Padrões de Código e Organização
+
+> **Nota**: Por se tratar de um projeto de teste, algumas destas práticas e padrões não foram implementados em sua totalidade. Em um projeto real, seria importante seguir estas diretrizes mais estritamente para garantir a qualidade e manutenibilidade do código.
+
+#### Organização de Imports
+
+1. **Ordem de Imports**
+
+   - Imports do React primeiro
+   - Bibliotecas externas em seguida
+   - Imports absolutos (@/) depois
+   - Imports relativos (./) por último
+   - Linha em branco entre cada grupo
+
+2. **Imports de Tipos**
+   - Uso obrigatório de `import type` para tipos
+   - Separação de tipos e valores
+   - Exemplo:
+     ```typescript
+     import type { PropsWithChildren } from 'react'
+     import { useState } from 'react'
      ```
-   - Reutilização facilitada
-   - Controle total sobre estilos
+
+#### Padrões de Código
+
+1. **Funções**
+
+   - Preferência por arrow functions
+   - Nomes descritivos e em camelCase
+   - Funções puras quando possível
+   - Evitar funções aninhadas
+
+2. **Variáveis e Constantes**
+
+   - Nomes descritivos e em camelCase
+   - Constantes em UPPER_SNAKE_CASE
+   - Evitar variáveis não utilizadas
+   - Tipagem explícita quando necessário
+
+3. **Componentes**
+
+   - Nomes em PascalCase
+   - Props tipadas com interface/type
+   - Componentes pequenos e focados
+   - Separação de lógica e apresentação
+
+4. **Hooks**
+   - Prefixo 'use' obrigatório
+   - Encapsulamento de lógica complexa
+   - Evitar hooks aninhados
+   - Documentação de dependências
+
+#### Melhorias Sugeridas
+
+1. **ESLint**
+
+   - Regras mais estritas para imports
+   - Forçar uso de arrow functions
+   - Detectar variáveis não utilizadas
+   - Padronização de nomenclatura
+   - Prevenir imports circulares
+
+2. **Prettier**
+
+   - Formatação consistente
+   - Ordenação automática de imports
+   - Padrões de quebra de linha
+   - Configuração de aspas e ponto e vírgula
+
+3. **TypeScript**
+   - Configuração mais estrita
+   - Forçar tipagem explícita
+   - Evitar uso de `any`
+   - Melhor uso de tipos utilitários
+
+#### Benefícios
+
+1. **Manutenibilidade**
+
+   - Código mais previsível
+   - Menos bugs potenciais
+   - Facilidade de refatoração
+   - Melhor documentação implícita
+
+2. **Produtividade**
+
+   - Menos tempo em revisões
+   - Detecção precoce de erros
+   - Automação de formatação
+   - Melhor experiência de desenvolvimento
+
+3. **Qualidade**
+   - Código mais robusto
+   - Melhor performance
+   - Menos problemas de runtime
+   - Melhor experiência do usuário
 
 ---
 
