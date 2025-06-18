@@ -1,8 +1,10 @@
-# 🚀 Desafio Frontend Pigz
+[View Portuguese version](README.pt-BR.md)
 
-Este projeto é um teste técnico para a empresa Pigz, desenvolvido com React, TypeScript e Vite. O objetivo é demonstrar habilidades em desenvolvimento frontend, incluindo boas práticas, organização de código e experiência do usuário.
+# 🚀 Pigz Frontend Challenge
 
-## 🛠️ Tecnologias Utilizadas
+This project is a technical test for Pigz company, developed with React, TypeScript, and Vite. The goal is to demonstrate frontend development skills, including best practices, code organization, and user experience.
+
+## 🛠️ Technologies Used
 
 - ⚛️ React 19
 - 📘 TypeScript
@@ -13,422 +15,422 @@ Este projeto é um teste técnico para a empresa Pigz, desenvolvido com React, T
 - ✅ Zod
 - 🎯 Zustand
 
-## 🚀 Como Executar o Projeto
+## 🚀 How to Run the Project
 
-### Pré-requisitos
+### Prerequisites
 
-- Node.js (versão 18 ou superior)
-- Yarn ou npm
+- Node.js (version 18 or higher)
+- Yarn or npm
 
-### 🔧 Instalação
+### 🔧 Installation
 
-1. Clone o repositório:
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/seu-usuario/desafio-pigz-front.git
 cd desafio-pigz-front
 ```
 
-2. Instale as dependências:
+2. Install dependencies:
 
 ```bash
 yarn install
-# ou
+# or
 npm install
 ```
 
-3. Inicie o servidor de desenvolvimento:
+3. Start the development server:
 
 ```bash
 yarn dev
-# ou
+# or
 npm run dev
 ```
 
-O projeto estará disponível em `http://localhost:5173`
+The project will be available at `http://localhost:5173`
 
-## 📦 Scripts Disponíveis
+## 📦 Available Scripts
 
-- `yarn dev` - Inicia o servidor de desenvolvimento
-- `yarn build` - Cria a build de produção
-- `yarn lint` - Executa o linter
-- `yarn preview` - Visualiza a build de produção localmente
+- `yarn dev` - Starts the development server
+- `yarn build` - Creates production build
+- `yarn lint` - Runs the linter
+- `yarn preview` - Previews production build locally
 
-## 🏗️ Estrutura do Projeto
+## 🏗️ Project Structure
 
 ```
 src/
-├── assets/          # Recursos estáticos (imagens, ícones, fonts)
-├── components/      # Componentes React organizados por atomic design
-│   ├── atoms/      # Componentes básicos (botões, inputs, textos)
-│   ├── molecules/  # Componentes compostos (formulários, cards)
-│   ├── organisms/  # Componentes complexos (headers, sidebars)
-│   └── templates/  # Layouts e estruturas de página
-├── constants/       # Constantes, enums e configurações globais
-├── providers/       # Providers da aplicação
-│   ├── AppProvider.tsx    # Provider principal que agrupa todos os providers
-│   └── QueryProvider.tsx  # Configuração do Tanstack Query
-├── services/       # Serviços de API e integrações externas
-├── store/          # Gerenciamento de estado global (Zustand)
-└── types/          # Definições de tipos TypeScript e interfaces
+├── assets/          # Static resources (images, icons, fonts)
+├── components/      # React components organized by atomic design
+│   ├── atoms/      # Basic components (buttons, inputs, texts)
+│   ├── molecules/  # Composite components (forms, cards)
+│   ├── organisms/  # Complex components (headers, sidebars)
+│   └── templates/  # Page layouts and structures
+├── constants/       # Constants, enums, and global configurations
+├── providers/       # Application providers
+│   ├── AppProvider.tsx    # Main provider that groups all providers
+│   └── QueryProvider.tsx  # Tanstack Query configuration
+├── services/       # API services and external integrations
+├── store/          # Global state management (Zustand)
+└── types/          # TypeScript type definitions and interfaces
 ```
 
-### 📁 Detalhamento das Pastas
+### 📁 Folder Details
 
 #### Components (Atomic Design)
 
-- **Atoms**: Componentes fundamentais e reutilizáveis
+- **Atoms**: Fundamental and reusable components
 
-  - Botões, inputs, textos, ícones
-  - Componentes puros sem lógica de negócio
-  - Altamente reutilizáveis e independentes
+  - Buttons, inputs, texts, icons
+  - Pure components without business logic
+  - Highly reusable and independent
 
-- **Molecules**: Combinações de atoms
+- **Molecules**: Combinations of atoms
 
-  - Formulários, cards, listas
-  - Pequenos grupos de componentes
-  - Lógica simples e reutilizável
+  - Forms, cards, lists
+  - Small groups of components
+  - Simple and reusable logic
 
-- **Organisms**: Componentes complexos
+- **Organisms**: Complex components
 
-  - Headers, sidebars, modais
-  - Combinações de molecules e atoms
-  - Lógica de negócio específica
+  - Headers, sidebars, modals
+  - Combinations of molecules and atoms
+  - Specific business logic
 
-- **Templates**: Estruturas de página
-  - Layouts base
-  - Organização de organisms
-  - Estrutura geral das páginas
+- **Templates**: Page structures
+  - Base layouts
+  - Organization of organisms
+  - Overall page structure
 
-### 📝 Nota sobre Organização do Atomic Design
+### 📝 Note on Atomic Design Organization
 
-Neste projeto de teste, todos os componentes foram organizados dentro da pasta `@/components` seguindo a estrutura do atomic design (atoms, molecules, organisms, templates). No entanto, em projetos reais, existem duas abordagens principais para organizar os componentes:
+In this test project, all components are organized within the `@/components` folder following the atomic design structure (atoms, molecules, organisms, templates). However, in real projects, there are two main approaches to organizing components:
 
-1. **Abordagem Centralizada**
+1. **Centralized Approach**
 
-   - Todos os componentes ficam em `@/components`
-   - Estrutura: `@/components/{atoms|molecules|organisms|templates}`
-   - Vantagens:
-     - Fácil localização de componentes
-     - Reutilização mais evidente
-     - Consistência garantida
-   - Desvantagens:
-     - Pode ficar muito grande
-     - Mistura componentes específicos com reutilizáveis
+   - All components in `@/components`
+   - Structure: `@/components/{atoms|molecules|organisms|templates}`
+   - Advantages:
+     - Easy component location
+     - More evident reuse
+     - Guaranteed consistency
+   - Disadvantages:
+     - Can become too large
+     - Mixes specific and reusable components
 
-2. **Abordagem Híbrida**
-   - Componentes reutilizáveis em `@/components`
-   - Componentes específicos em `@/pages/{pageName}/components`
-   - Estrutura:
+2. **Hybrid Approach**
+   - Reusable components in `@/components`
+   - Specific components in `@/pages/{pageName}/components`
+   - Structure:
      ```
      src/
-     ├── components/           # Componentes reutilizáveis
+     ├── components/           # Reusable components
      │   ├── atoms/
      │   ├── molecules/
      │   └── organisms/
      └── pages/
          └── home/
-             └── components/   # Componentes específicos da página
+             └── components/   # Page-specific components
      ```
-   - Vantagens:
-     - Melhor coesão
-     - Mais fácil de manter
-     - Evita poluição do diretório de componentes
-   - Desvantagens:
-     - Pode haver duplicação
-     - Mais difícil de encontrar componentes
+   - Advantages:
+     - Better cohesion
+     - Easier maintenance
+     - Avoids component directory pollution
+   - Disadvantages:
+     - Potential duplication
+     - Harder to find components
 
-A escolha entre as abordagens deve ser feita considerando:
+The choice between approaches should consider:
 
-- Tamanho do projeto
-- Equipe e suas preferências
-- Complexidade dos componentes
-- Necessidade de reutilização
-- Padrões da empresa
+- Project size
+- Team preferences
+- Component complexity
+- Reuse needs
+- Company standards
 
-#### Outras Pastas
+#### Other Folders
 
-- **Assets**: Recursos estáticos organizados por tipo
+- **Assets**: Static resources organized by type
 
-  - Imagens e SVGs
-  - Fontes e ícones
-  - Arquivos de mídia
+  - Images and SVGs
+  - Fonts and icons
+  - Media files
 
-- **Constants**: Configurações e valores fixos
+- **Constants**: Configurations and fixed values
 
-  - Enums e constantes
-  - Configurações de ambiente
-  - Valores padrão
+  - Enums and constants
+  - Environment configurations
+  - Default values
 
-- **Providers**: Configurações e providers da aplicação
+- **Providers**: Application configurations and providers
 
-  - AppProvider: Provider principal que agrupa todos os providers
-  - QueryProvider: Configuração centralizada do Tanstack Query
-  - Facilita a manutenção e reutilização de configurações
-  - Permite adicionar novos providers de forma organizada
+  - AppProvider: Main provider that groups all providers
+  - QueryProvider: Centralized Tanstack Query configuration
+  - Facilitates maintenance and configuration reuse
+  - Allows organized addition of new providers
 
-- **Services**: Integrações e APIs
+- **Services**: Integrations and APIs
 
-  - Clientes HTTP
-  - Serviços de autenticação
-  - Integrações com APIs externas
+  - HTTP clients
+  - Authentication services
+  - External API integrations
 
-- **Store**: Gerenciamento de estado
+- **Store**: State management
 
-  - Stores Zustand
-  - Slices de estado
-  - Actions e reducers
+  - Zustand stores
+  - State slices
+  - Actions and reducers
 
-- **Types**: Definições TypeScript
+- **Types**: TypeScript definitions
   - Interfaces
   - Types
-  - DTOs e modelos
+  - DTOs and models
 
-## 🎯 Funcionalidades
+## 🎯 Features
 
-- ✨ Interface moderna e responsiva
-- 🔄 Gerenciamento de estado eficiente
-- 📱 Design mobile-first
-- 🎨 Estilização com TailwindCSS
-- 🔒 Validação de formulários
-- 🌐 Integração com API
+- ✨ Modern and responsive interface
+- 🔄 Efficient state management
+- 📱 Mobile-first design
+- 🎨 Styling with TailwindCSS
+- 🔒 Form validation
+- 🌐 API integration
 
-## 📝 Licença
+## 📝 License
 
-Este projeto é um teste técnico e não possui licença específica.
+This project is a technical test and has no specific license.
 
-## 👨‍💻 Autor
+## 👨‍💻 Author
 
-Seu Nome - [renanolovics@gmail.com](mailto:renanolovics@gmail.com)
+Your Name - [renanolovics@gmail.com](mailto:renanolovics@gmail.com)
 
-## 📚 Explicações do Projeto
+## 📚 Project Explanations
 
-### Arquitetura e Decisões Técnicas
+### Architecture and Technical Decisions
 
-- **Gerenciamento de Estado**: Utilizei Zustand por sua simplicidade e performance
-- **Formulários**: React Hook Form + Zod para validação robusta e tipagem segura
-- **Queries**: Tanstack Query para gerenciamento eficiente de cache e estados de loading/error com Axios que facilita demais
-- **Estilização**: TailwindCSS para desenvolvimento rápido e consistente
+- **State Management**: Used Zustand for its simplicity and performance
+- **Forms**: React Hook Form + Zod for robust validation and type safety
+- **Queries**: Tanstack Query for efficient cache management and loading/error states with Axios
+- **Styling**: TailwindCSS for rapid and consistent development
 
-### Padrões e Boas Práticas
+### Patterns and Best Practices
 
-- Componentização atômica para reuso e manutenção
-- Tipagem forte com TypeScript
-- Separação clara de responsabilidades
-- Documentação de componentes e funções
+- Atomic componentization for reuse and maintenance
+- Strong typing with TypeScript
+- Clear separation of responsibilities
+- Component and function documentation
 
-## 🔮 Melhorias Futuras
+## 🔮 Future Improvements
 
 ### Performance
 
-- Implementação de lazy loading para componentes pesados
-- Otimização de imagens e assets
-- Implementação de Storybook
-- Melhorias no SEO
+- Implementation of lazy loading for heavy components
+- Image and asset optimization
+- Storybook implementation
+- SEO improvements
 
-### Funcionalidades
+### Features
 
-- Internacionalização (i18n)
-- Tema escuro/claro
-- Animações e transições mais elaboradas
+- Internationalization (i18n)
+- Dark/light theme
+- More elaborate animations and transitions
 
-### Desenvolvimento
+### Development
 
-- Implementação de CI/CD
-- Monitoramento de erros (ex: Sentry)
-- Tracking de usuário com PostHog
-- Testes E2E com Cypress ou Playwright
-- Métricas de performance (Core Web Vitals)
+- CI/CD implementation
+- Error monitoring (e.g., Sentry)
+- User tracking with PostHog
+- E2E tests with Cypress or Playwright
+- Performance metrics (Core Web Vitals)
 
 ### UX/UI
 
-- Feedback visual mais elaborado
-- Melhorias na acessibilidade
-- Design System mais completo
+- More elaborate visual feedback
+- Accessibility improvements
+- More complete Design System
 
-### 🎨 Desenvolvimento Pixel Perfect vs Responsividade
+### 🎨 Pixel Perfect Development vs Responsiveness
 
-Neste projeto, o desenvolvimento foi feito seguindo o conceito de "pixel perfect", onde a implementação deve corresponder exatamente ao design fornecido. No entanto, é importante destacar alguns pontos sobre esta abordagem:
+In this project, development follows the "pixel perfect" concept, where implementation must exactly match the provided design. However, it's important to highlight some points about this approach:
 
-#### Desafios do Pixel Perfect
+#### Pixel Perfect Challenges
 
-- Designers frequentemente criam layouts para um tamanho específico de tela
-- Não consideram a diversidade de dispositivos e resoluções
-- Podem criar limitações para a implementação responsiva
-- Podem resultar em uma experiência sub-ótima em diferentes dispositivos
+- Designers often create layouts for a specific screen size
+- Don't consider device and resolution diversity
+- Can create limitations for responsive implementation
+- May result in sub-optimal experience on different devices
 
-#### Responsividade no Mundo Real
+#### Real-World Responsiveness
 
-- Usuários acessam de diversos dispositivos:
-  - Smartphones (diferentes tamanhos)
+- Users access from various devices:
+  - Smartphones (different sizes)
   - Tablets
-  - Notebooks
-  - Monitores grandes
-  - Telas ultrawide
-- Necessidade de adaptação fluida
-- Priorização da experiência do usuário sobre fidelidade absoluta ao design
+  - Laptops
+  - Large monitors
+  - Ultrawide screens
+- Need for fluid adaptation
+- Prioritizing user experience over absolute design fidelity
 
-#### Recomendações para Equipes
+#### Team Recommendations
 
 1. **Design**
 
-   - Fornecer breakpoints claros
-   - Considerar diferentes tamanhos de tela
-   - Definir comportamentos responsivos
-   - Estabelecer hierarquia de elementos
+   - Provide clear breakpoints
+   - Consider different screen sizes
+   - Define responsive behaviors
+   - Establish element hierarchy
 
-2. **Desenvolvimento**
+2. **Development**
 
-   - Manter comunicação constante com design
-   - Ter liberdade para adaptações responsivas
-   - Priorizar usabilidade sobre perfeição visual
-   - Implementar testes em diferentes dispositivos
+   - Maintain constant communication with design
+   - Have freedom for responsive adaptations
+   - Prioritize usability over visual perfection
+   - Implement tests on different devices
 
-3. **Processo**
-   - Revisões de design considerando responsividade
-   - Feedback constante entre design e desenvolvimento
-   - Documentação de comportamentos responsivos
-   - Testes de usabilidade em diferentes dispositivos
+3. **Process**
+   - Design reviews considering responsiveness
+   - Constant feedback between design and development
+   - Documentation of responsive behaviors
+   - Usability testing on different devices
 
-A busca pelo pixel perfect não deve comprometer a experiência do usuário em diferentes dispositivos. É crucial encontrar um equilíbrio entre fidelidade ao design e responsividade efetiva.
+The pursuit of pixel perfect should not compromise user experience on different devices. It's crucial to find a balance between design fidelity and effective responsiveness.
 
-### 🎯 Padrões de Projeto Utilizados
+### 🎯 Design Patterns Used
 
 #### Atomic Design
 
-- **Atoms**: Componentes básicos e reutilizáveis
+- **Atoms**: Basic and reusable components
 
-  - Botões, inputs, ícones
-  - Componentes puros sem lógica de negócio
-  - Altamente reutilizáveis
+  - Buttons, inputs, icons
+  - Pure components without business logic
+  - Highly reusable
 
-- **Molecules**: Combinações de atoms
+- **Molecules**: Combinations of atoms
 
-  - Formulários, cards
-  - Pequenos grupos de componentes
-  - Lógica simples
+  - Forms, cards
+  - Small groups of components
+  - Simple logic
 
-- **Organisms**: Componentes complexos
+- **Organisms**: Complex components
   - Headers, banners
-  - Combinações de molecules
-  - Lógica de negócio específica
+  - Combinations of molecules
+  - Specific business logic
 
-#### Outros Padrões
+#### Other Patterns
 
 - **Provider Pattern**
 
-  - Centralização de configurações
-  - Injeção de dependências
-  - Exemplo: QueryProvider, AppProvider
+  - Configuration centralization
+  - Dependency injection
+  - Example: QueryProvider, AppProvider
 
 - **Container/Presentational**
 
-  - Separação de lógica e apresentação
-  - Componentes puros para UI
-  - Containers para lógica de negócio
+  - Separation of logic and presentation
+  - Pure components for UI
+  - Containers for business logic
 
 - **Custom Hooks**
-  - Encapsulamento de lógica reutilizável
-  - Exemplo: useSearchCity, useSearchAddress
-  - Separação de responsabilidades
+  - Encapsulation of reusable logic
+  - Example: useSearchCity, useSearchAddress
+  - Separation of responsibilities
 
-### 🛠️ Padrões de Código e Organização
+### 🛠️ Code Patterns and Organization
 
-> **Nota**: Por se tratar de um projeto de teste, algumas destas práticas e padrões não foram implementados em sua totalidade. Em um projeto real, seria importante seguir estas diretrizes mais estritamente para garantir a qualidade e manutenibilidade do código.
+> **Note**: As this is a test project, some of these practices and patterns were not fully implemented. In a real project, it would be important to follow these guidelines more strictly to ensure code quality and maintainability.
 
-#### Organização de Imports
+#### Import Organization
 
-1. **Ordem de Imports**
+1. **Import Order**
 
-   - Imports do React primeiro
-   - Bibliotecas externas em seguida
-   - Imports absolutos (@/) depois
-   - Imports relativos (./) por último
-   - Linha em branco entre cada grupo
+   - React imports first
+   - External libraries next
+   - Absolute imports (@/) after
+   - Relative imports (./) last
+   - Blank line between each group
 
-2. **Imports de Tipos**
-   - Uso obrigatório de `import type` para tipos
-   - Separação de tipos e valores
-   - Exemplo:
+2. **Type Imports**
+   - Mandatory use of `import type` for types
+   - Separation of types and values
+   - Example:
      ```typescript
      import type { PropsWithChildren } from 'react'
      import { useState } from 'react'
      ```
 
-#### Padrões de Código
+#### Code Patterns
 
-1. **Funções**
+1. **Functions**
 
-   - Preferência por arrow functions
-   - Nomes descritivos e em camelCase
-   - Funções puras quando possível
-   - Evitar funções aninhadas
+   - Preference for arrow functions
+   - Descriptive names in camelCase
+   - Pure functions when possible
+   - Avoid nested functions
 
-2. **Variáveis e Constantes**
+2. **Variables and Constants**
 
-   - Nomes descritivos e em camelCase
-   - Constantes em UPPER_SNAKE_CASE
-   - Evitar variáveis não utilizadas
-   - Tipagem explícita quando necessário
+   - Descriptive names in camelCase
+   - Constants in UPPER_SNAKE_CASE
+   - Avoid unused variables
+   - Explicit typing when necessary
 
-3. **Componentes**
+3. **Components**
 
-   - Nomes em PascalCase
-   - Props tipadas com interface/type
-   - Componentes pequenos e focados
-   - Separação de lógica e apresentação
+   - Names in PascalCase
+   - Props typed with interface/type
+   - Small and focused components
+   - Separation of logic and presentation
 
 4. **Hooks**
-   - Prefixo 'use' obrigatório
-   - Encapsulamento de lógica complexa
-   - Evitar hooks aninhados
-   - Documentação de dependências
+   - Mandatory 'use' prefix
+   - Encapsulation of complex logic
+   - Avoid nested hooks
+   - Dependency documentation
 
-#### Melhorias Sugeridas
+#### Suggested Improvements
 
 1. **ESLint**
 
-   - Regras mais estritas para imports
-   - Forçar uso de arrow functions
-   - Detectar variáveis não utilizadas
-   - Padronização de nomenclatura
-   - Prevenir imports circulares
+   - Stricter rules for imports
+   - Force use of arrow functions
+   - Detect unused variables
+   - Naming standardization
+   - Prevent circular imports
 
 2. **Prettier**
 
-   - Formatação consistente
-   - Ordenação automática de imports
-   - Padrões de quebra de linha
-   - Configuração de aspas e ponto e vírgula
+   - Consistent formatting
+   - Automatic import ordering
+   - Line break patterns
+   - Quote and semicolon configuration
 
 3. **TypeScript**
-   - Configuração mais estrita
-   - Forçar tipagem explícita
-   - Evitar uso de `any`
-   - Melhor uso de tipos utilitários
+   - Stricter configuration
+   - Force explicit typing
+   - Avoid use of `any`
+   - Better use of utility types
 
-#### Benefícios
+#### Benefits
 
-1. **Manutenibilidade**
+1. **Maintainability**
 
-   - Código mais previsível
-   - Menos bugs potenciais
-   - Facilidade de refatoração
-   - Melhor documentação implícita
+   - More predictable code
+   - Fewer potential bugs
+   - Easier refactoring
+   - Better implicit documentation
 
-2. **Produtividade**
+2. **Productivity**
 
-   - Menos tempo em revisões
-   - Detecção precoce de erros
-   - Automação de formatação
-   - Melhor experiência de desenvolvimento
+   - Less time in reviews
+   - Early error detection
+   - Formatting automation
+   - Better development experience
 
-3. **Qualidade**
-   - Código mais robusto
-   - Melhor performance
-   - Menos problemas de runtime
-   - Melhor experiência do usuário
+3. **Quality**
+   - More robust code
+   - Better performance
+   - Fewer runtime issues
+   - Better user experience
 
 ---
 
-⭐️ Desenvolvido com ❤️ para o processo seletivo da Pigz
+⭐️ Developed with ❤️ for Pigz's selection process
